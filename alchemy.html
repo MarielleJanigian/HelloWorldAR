@@ -51,7 +51,7 @@ function initialize()
 		alpha: true
 	});
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-	renderer.setSize( 640, 480 );
+	renderer.setSize( 1000, 480 );
 	renderer.domElement.style.position = 'absolute'
 	renderer.domElement.style.top = '0px'
 	renderer.domElement.style.left = '0px'
@@ -108,7 +108,7 @@ function initialize()
 	////////////////////////////////////////////////////////////
 
 	let loader = new THREE.TextureLoader();
-	let texture = loader.load( 'images/border.png', render );
+	let texture = loader.load( 'th.jpg', render );
 		
 
 		markerRootA = new THREE.Group();
@@ -182,7 +182,7 @@ function initialize()
 
 function update()
 {
-	// Change Kanji cube color if other markers are visible
+	// Change Kanji cube color if other markers are visible // color
 	visA = markerRootA.visible
 	visB = markerRootB.visible
 	visC = markerRootC.visible
@@ -195,7 +195,7 @@ function update()
 	if ( visA == false && visB == false && visC == true)
 		meshKanji.material.color.setHex ( 0x00ff00 );		
 	if ( visA == true && visB == true && visC == false)
-		meshKanji.material.color.setHex ( 0xff00ff );
+		meshKanji.material.color.setHex ( FFFFFFFF );
 	if ( visA == true && visB == false && visC == true)
 		meshKanji.material.color.setHex ( 0xffff00 );
 	if ( visA == false && visB == true && visC == true)
